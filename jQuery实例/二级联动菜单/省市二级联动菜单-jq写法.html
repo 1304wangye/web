@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="">
+			<select id="state">
+				<option value="">请选择省份</option>
+			</select>
+			<select id="city">
+				<option value="">请选择城市</option>
+			</select>
+		</form>
+		
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			
+			//数据
+			var area = [
+				{
+					state:'辽宁',
+					city:['沈阳','大连','鞍山','营口']
+				},
+				{
+					state:'吉林',
+					city:['长春','四平','通化','白山','图门']
+				},
+				{
+					state:'黑龙江',
+					city:['哈尔滨','齐齐哈尔','大庆']
+				},
+				{
+					state:'北京',
+					city:['北京市']
+				}
+			];
+			
+			$(function() {
+				
+				//获得列表框对象
+				var stateObj = $('#state');
+				var cityObj = $('#city');
+				
+				//一级菜单（省）
+				for (var i = 0;i < area.length;i ++) {
+					stateObj.append('<option>' + area[i].state +'</option>');
+				}
+				
+				//二级菜单（市）
+				stateObj.change(function() {
+					
+					$('#city option:not(:first)').remove();
+					
+					//如果选择第一项，不对应任何城市
+					if ($('#state option:selected').index() == 0)
+						return;
+					
+					//获得对应的城市数组
+					var citys = area[$('#state option:selected').index() - 1].city;
+					
+					for (var i = 0;i < citys.length;i ++) {
+						cityObj.append('<option>' + citys[i] +'</option>')
+					}
+					
+				});
+				
+			});
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#container {
+				width: 100%;
+				height: 100%;
+				background: rgba(0,0,0,0.5);
+				position: fixed;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+			#win{
+				width: 300px;
+				height: 200px;
+				background: palevioletred;
+				margin: auto;
+				position: relative;
+				top: calc(50% - 100px);
+			}
+			#x{
+				width: 20px;
+				height: 18px;
+				background: #CCCCCC;
+				text-align: center;
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<input type="button" id="btn1" value="弹窗模态层" />
+		<div id="container">
+			<div id="win">
+				<div id="x">
+					X
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+		
+			for (var i = 1;i <= 100;i ++) {
+				document.write('<br />' + i);
+			}
+			
+			window.onload = function() {
+				
+				var btn1 = document.getElementById('btn1');
+				var container = document.getElementById('container');
+				var win = document.getElementById('win');
+				var x = document.getElementById('x');
+				
+				btn1.onclick = function() {
+					
+					container.style.display = 'block';
+					
+				}
+				
+				container.onclick = function(e) {
+					
+					container.style.display = 'none';
+					
+					e = e || window.event;
+					e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
+					
+				}
+				
+				win.onclick = function(e) {
+					container.style.display = 'block';
+					
+					e = e || window.event;
+					e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
+					
+				}
+				
+				x.onclick = function(e) {
+					
+					container.style.display = 'none';
+					
+					e = e || window.event;
+					e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
+					
+				}
+				
+				document.onkeydown = function(e) {
+					
+					e = e ||window.event;
+					
+					if (e.keyCode == 27) {
+						container.style.display = 'none';
+					}
+					
+				}
+				
+			}
+		</script>
+	</body>
+</html>

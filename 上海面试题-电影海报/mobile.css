@@ -1,0 +1,120 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+
+#container {
+	width: 318px;
+	margin: 0 auto;
+	border: 1px solid #aaaaaa;
+}
+
+#title {
+	width: 100%;
+	height: 40px;
+	background: #613712;
+	color: #ffffff;
+	font-size: 20px;
+	text-align: center;
+	line-height: 40px;
+}
+
+#images {
+	width: 310px;
+	margin: 5px;
+}
+
+.imgbox {
+	width: 300px;
+	height: 450px;
+	margin: 0 auto;
+	border: 5px solid #FFFFFF;
+}
+
+.imgboxs {
+	width: 300px;
+	height: 450px;
+	margin: 0 auto;
+	border: 5px solid yellow;
+}
+
+#img1 {
+	background: url(images/image1.png) no-repeat;
+	background-size: 300px 450px;
+}
+
+#img2 {
+	background: url(images/image2.png) no-repeat;
+	background-size: 300px 450px;
+}
+
+#img3 {
+	background: url(images/image3.png) no-repeat;
+	background-size: 300px 450px;
+}
+
+#img4 {
+	background: url(images/image4.png) no-repeat;
+	background-size: 300px 450px;
+}
+
+#words {
+	width: 300px;
+	height: 280px;
+	margin: 10px auto;
+	margin-left: 10px;
+	position: relative;
+}
+
+.wordsbox {
+	margin: 50px 0;
+	display: none;
+	position: absolute;
+	top: 0;
+}
+
+.wordsboxs {
+	margin: 50px 0;
+	display: block;
+	position: absolute;
+	top: 0;
+}
+
+.moviename {
+	color: #333;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.moviename span {
+	color: #999;
+	font-size: 24px;
+	line-height: 35px;
+}
+
+.director {
+	color: #999;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.grade {
+	color: #999;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.jq {
+	color: #699346;
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.jqcontent {
+	color: #333;
+	font-size: 14px;
+	line-height: 20px;
+	text-indent: 2em;
+}
+

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!--网页头部开始-->
+		<div id="header">
+			<img src="images/logo.gif"/>
+			<span>
+				<a href="#">
+					<img src="images/loginbg.gif"/>
+					登录
+				</a>
+				<i>|</i>
+				<a href="#">注册</a>
+				<i>|</i>
+				<a href="#">客户服务</a>
+			</span>
+		</div>
+		<!--网页头部结束-->
+		<!--内容区开始-->
+		<div id="main">
+			<!--标题开始-->
+			<div class="biaoti">
+				<a href="#">预定船票</a>
+				<span>&nbsp;>&nbsp;订单填写</span>
+				<div class="luxian">
+					<ul>
+						<li>
+							大连&nbsp;——&nbsp;烟台&nbsp;（&nbsp;4月18日&nbsp;周六
+							<span class="highlight">15:30</span>
+							&nbsp;开船&nbsp;）
+						</li>
+						<li>地点：大连港</li>
+						<li>船名：龙兴岛</li>
+					</ul>
+				</div>
+			</div>
+			<!--标题结束-->
+			<!--票价信息开始-->
+			<div class="piaojia">
+				<h4>票价信息</h4>
+				<div class="piaojialan">
+					<p>单次预定限5张</p>
+					<ul>
+						<li>
+							普通：&nbsp;
+							<span class="highlight">￥315（280+20+15）</span>
+						</li>
+						<li>
+							学生：&nbsp;
+							<span class="highlight">￥315（280+20+15）</span>
+						</li>
+						<li>
+							军人：&nbsp;
+							<span class="highlight">￥315（280+20+15）</span>
+						</li>
+						<li>
+							儿童：&nbsp;
+							<span class="highlight">￥315（280+20+15）</span>
+						</li>
+						<li><a href="#">[说明]</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--票价信息结束-->
+			<!--乘船人信息开始-->
+			<div class="chengchuan">
+				<h4>乘船人信息</h4>
+				<div class="chengchuanlan">
+					<div class="always" id="allPassenger">
+						<span>
+							<b>常用乘船人</b>
+						</span>
+						&nbsp;&nbsp;
+						<span id="defaultPassenger">
+							<!--							
+							<label>
+								<input type="checkbox" id="1" />
+								王大川
+							</label>
+							-->
+							
+						</span>
+						<span id="passengerBlock" style="display: none;">
+							
+							<!--							
+							<label>
+								<input type="checkbox" id="2" />
+								张三
+							</label>
+							<label>
+								<input type="checkbox" id="3" />
+								李四
+							</label>
+							<label>
+								<input type="checkbox" id="4" />
+								王五
+							</label>
+							<label>
+								<input type="checkbox" id="5" />
+								赵六
+							</label>
+							<label>
+								<input type="checkbox" id="6" />
+								钱七
+							</label>
+							-->
+						</span>
+						&nbsp;&nbsp;
+						<a href="javascript:;" id="moreBtn">更多>></a>
+					</div>
+					<div id="passengerList">
+						<!--						
+						<ul id="1">
+							<li>
+								<select name="price">
+									<option value="315">普通￥315</option>
+									<option value="300">学生￥300</option>
+									<option value="270">军人￥270</option>
+									<option value="100">儿童￥100</option>
+								</select>
+							</li>
+							<li>
+								姓名：<input type="text" size="8" value="王大川" readonly />
+							</li>
+							<li>
+								<select>
+									<option value="1">身份证</option>
+								</select>
+								<input type="text" value="2202045678951" readonly />
+							</li>
+							<li>
+								电话：<input type="text" value="13608965458" readonly />
+							</li>
+							<li>
+								<input type="button" class="delBtn" value="删除当前" />
+							</li>
+						</ul>
+						-->
+					</div>
+					<a href="javascript:;" id="addPassBtn">
+						<img src="images/regbtn9.gif"/>
+					</a>
+				</div>
+			</div>
+			<!--乘船人信息结束-->
+			<!--取票人信息开始-->
+			<div class="qupiao">
+				<h4>取票人信息</h4>
+				<div class="qupiaolan">
+					<div class="qupiaoren">
+						<span>
+							<b>取票人</b>
+						</span>
+						&nbsp;&nbsp;
+						<label>
+							<input type="radio" name="qupiao"/>
+							王大川
+						</label>
+						<span style="display: none;" id="allQupianren">
+							<label>
+								<input type="radio" name="qupiao"/>
+								张三
+							</label>
+							<label>
+								<input type="radio" name="qupiao"/>
+								李四
+							</label>
+							<label>
+								<input type="radio" name="qupiao"/>
+								王五
+							</label>
+							<label>
+								<input type="radio" name="qupiao"/>
+								赵六
+							</label>
+						</span>
+						&nbsp;&nbsp;
+						<a href="javascript:;" id="moreBtn2">更多>></a>
+					</div>
+					<div>
+						<ul>
+							<li>王大川</li>
+							<li>身份证</li>
+							<li>2202045678951</li>
+							<li>13608965458</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--取票人信息结束-->
+			<!--提交订单开始-->
+			<div class="submit">
+				<div class="wrapper">
+					<span>
+						共<span class="highlight" id="ticketCountTxt">0</span>
+						张票&nbsp;订单总额￥
+						<span class="highlight" style="font-size: 18px;" id="totalPriceTxt">0</span>
+					</span>
+					<a href="#">
+						<img src="images/regbtn10.gif"/>
+					</a>
+				</div>
+			</div>
+			<!--提交订单结束-->
+		</div>
+		<!--内容区结束-->
+		<!--footer开始-->
+		<div id="footer">
+			<p>
+				<span>关于我们</span>
+				<i>|</i>
+				<span>联系我们</span>
+				<i>|</i>
+				<span>投诉建议</span>
+				<i>|</i>
+				<span>广告服务</span>
+				<i>|</i>
+				<span>免责声明</span>
+			</p>
+			<p>大连XX有限公司，售票业务经营许可证编号：1111111</p>
+			<p>Copyright © 2014船票网 www.xxx.com | 营业执照 | ICP证：辽XX-2000000</p>
+		</div>
+		<!--footer结束-->
+	</body>
+</html>

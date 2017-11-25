@@ -1,0 +1,67 @@
+@charset "utf-8";
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: url(main_bg2.jpg);
+	background-size: cover;
+}
+#main{
+	width: 350px;
+	height: 600px;
+	margin: 70px auto;
+	background: rgba(0,0,0,0.5);
+	border-top: 8px solid #0cc;
+	position: relative;
+}
+#header_pic{
+	width: 184px;
+	height: 184px;
+	background: url(liudehua.jpg);
+	background-size: cover;
+	margin: 50px auto;
+	border-radius: 50%;
+}
+#account{
+	width: 75%;
+	height: auto;
+	margin: 0 auto;
+}
+.input input{
+	width: 100%;
+	height: 40px;
+	padding: 0 5px;
+	border: 0;
+	background: rgba(0,0,0,0.5);
+	margin-bottom: 10px;
+	line-height: 40px;
+	font-size: 16px;
+	color: #00B2B2;
+	outline: none;
+}
+#btn1{
+	display: block;
+	width: 77%;
+	height: 40px;
+	margin: 30px auto;
+	font-size: 16px;
+	background: #00CCCC;
+	border: 0;
+	color: #fff;
+}
+#btn1:active {
+	position: relative;
+	top: 2px;
+}
+#footer{
+	width: 100%;
+	height: 50px;
+	border-top: 1px #FFFFFF solid;
+	text-align: center;
+	line-height: 50px;
+	font-size: 14px;
+	color: #FFFFFF;
+	position: absolute;
+	bottom: 0;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+			for (var i = 1;i <= 50;i ++) {
+				document.write('<p>' + i + '</p>');
+			}
+		</script>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function() {
+				
+				var j = 51;
+				
+				$(window).scroll(function() {
+					
+					var scrHeight = $(window).scrollTop();//滚动条位置
+					var winHeight = $(window).height();//视口高度
+					var docHeight = $(document).height();//网页高度
+					
+					if (scrHeight + winHeight >= docHeight) {
+						
+						for (var i = j;i < j + 50;i ++) {
+							
+							$(document.body).append('<p>' + i + '</p>');
+							
+						}
+						
+						j = i;
+					}
+					
+				});
+				
+			});
+		</script>
+	</body>
+</html>

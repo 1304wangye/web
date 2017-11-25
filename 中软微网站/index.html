@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--移动端视口设置-->
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+		<title>中软微网站</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<!--swiper轮播图css-->
+		<link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css"/>
+	</head>
+	<body>
+		<!--侧滑菜单开始-->
+		<nav id="nav" class="left-nav">
+			<h2>网站导航</h2>
+			<ul>
+				<li>首页</li>
+				<li>卓越简介</li>
+				<li>名企推荐</li>
+				<li>院校合作</li>
+				<li>精彩活动</li>
+				<li>预约报名</li>
+				<li>就业流程</li>
+				<li>常见问题</li>
+			</ul>
+		</nav>
+		<!--侧滑菜单结束-->
+		<!--主内容区开始-->
+		<div id="main" class="bg">
+			<!--头部开始-->
+			<header>
+				<!--轮播图开始-->
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<img src="images/banner01.jpg" alt="" />
+						</div>
+						<div class="swiper-slide">
+							<img src="images/banner02.jpg" alt="" />
+						</div>
+						<div class="swiper-slide">
+							<img src="images/banner03.jpg" alt="" />
+						</div>
+						<div class="swiper-slide">
+							<img src="images/banner04.jpg" alt="" />
+						</div>						
+					</div>	
+					<!-- Add Pagination -->
+		        	<div class="swiper-pagination"></div>		        	
+				</div>
+				<!--轮播图结束-->
+			</header>
+			<!--头部结束-->
+			<!--内容区开始-->
+			<div class="container">
+				<!--滚动字幕开始-->
+				<marquee>全栈工程师即将开课，敬请期待......</marquee>
+				<!--滚动字幕结束-->
+				<!--列表开始-->
+				<ul>
+					<li>
+						<img src="images/item1.jpg"/>
+						<img src="images/item1_on.png" class="on"/>
+						<dl>
+							<dt>&#xe600</dt>
+							<dd>卓越简介</dd>
+						</dl>
+					</li>
+					<li>
+						<img src="images/item2.jpg"/>
+						<img src="images/item2_on.png" class="on"/>
+						<dl>
+							<dt>&#xe601</dt>
+							<dd>精品课程</dd>
+						</dl>
+					</li>
+					<li>
+						<img src="images/item3.jpg"/>
+						<img src="images/item3_on.png" class="on"/>
+						<dl>
+							<dt>&#xe604</dt>
+							<dd>师资介绍</dd>
+						</dl>
+					</li>
+					<li>
+						<img src="images/item4.jpg"/>
+						<img src="images/item4_on.png" class="on"/>
+						<dl>
+							<dt>&#xe607</dt>
+							<dd>就业展示</dd>
+						</dl>
+					</li>
+					<li>
+						<img src="images/item5.jpg"/>
+						<img src="images/item5_on.png" class="on"/>
+						<dl>
+							<dt>&#xe603</dt>
+							<dd>课程试听</dd>
+						</dl>
+					</li>
+					<li>
+						<img src="images/item6.jpg"/>
+						<img src="images/item6_on.png" class="on"/>
+						<dl>
+							<dt>&#xe602</dt>
+							<dd>预约报名</dd>
+						</dl>
+					</li>
+				</ul>
+				<!--列表结束-->
+			</div>
+			<!--内容区结束-->
+		</div>
+		<!--主内容区结束-->
+		<!--底部导航开始-->
+		<footer>
+			<a href="javascript:void(0)" id="navBtn">
+				<b>&#xe609</b>
+				<i>导航</i>
+			</a>
+			<a href="tel:10086">
+				<b>&#xe602</b>
+				<i>电话</i>
+			</a>
+			<a href="#">
+				<b>&#xe603</b>
+				<i>申请试听</i>
+			</a>
+		</footer>
+		<!--底部导航结束-->
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script type="text/javascript" src="js/swiper/js/swiper.min.js" ></script>
+		<script type="text/javascript" src="js/layer/layer.js" ></script>
+		<script type="text/javascript" src="js/location.js" ></script>
+		
+		<script>
+			//初始化轮播图
+			var swiper = new Swiper('.swiper-container',{
+				pagination: '.swiper-pagination',				
+    			autoplay: 3000,
+    			autoplayDisableOnInteraction: false,
+    			loop: true
+			});	
+			
+			//导航按钮单击
+			$('#navBtn,#nav').click(function() {
+				
+				toggleNav();
+				
+				return false;
+				
+			});
+			
+			
+			function toggleNav() {
+				
+				if ($('#main').hasClass('navon')) {
+					$('#main').removeClass('navon');
+					$('footer').removeClass('navon');
+					$('#nav').css('visibility','hidden');
+				}else {
+					$('#main').addClass('navon');
+					$('footer').addClass('navon');
+					$('#nav').css('visibility','visible');
+				}
+				
+			}
+			
+		</script>
+	</body>
+</html>

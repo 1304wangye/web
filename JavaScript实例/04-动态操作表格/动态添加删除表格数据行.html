@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			input{
+				margin: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="container">
+			
+			<span id="span1">编号</span><input type="text" id="id" /><br />
+			<span>姓名</span><input type="text" id="name" /><br />
+			<span>年龄</span><input type="text" id="age" /><br />
+			<input type="button" id="add" value="增加学生" /><br />
+			
+		</div>
+		
+		<script>
+		
+			window.onload = function() {
+				
+				var container = document.getElementById('container');
+				var span1 = document.getElementById('span1');
+				var table = document.getElementsByTagName('table');
+				var id = document.getElementById('id');
+				var name = document.getElementById('name');
+				var age = document.getElementById('age');
+				var add = document.getElementById('add');
+				
+				var table = document.createElement('table');
+				table.border = 1;
+				var tr;
+				
+				
+				function addTh(a) {
+					tr = document.createElement('tr');
+					var th;
+					
+					for (var i = 0;i < 4;i ++) {
+						th = document.createElement('th');
+						th.width = 100;
+						th.innerHTML = a[i];
+						tr.appendChild(th);
+					}
+					table.appendChild(tr);
+				}
+				
+				function addTd(a) {
+					tr = document.createElement('tr');
+					var td;
+					
+					for (var i = 0;i < 3;i ++) {
+						td = document.createElement('td');
+						td.innerHTML = a[i];
+						tr.appendChild(td);
+					}
+					var del = document.createElement('input');
+					td = document.createElement('td');
+					del.type = "button";
+					del.value = "删除";
+					del.classname = "del";
+					td.appendChild(del);
+					tr.appendChild(td);
+					table.appendChild(tr);
+				}
+				
+				addTh(['编号','姓名','年龄','操作']);
+				addTd(['100','tom','27']);
+				
+					
+				add.onclick = function() {
+					addTd([id.value,name.value,age.value]);
+				}
+				
+				container.insertBefore(table,span1);
+				
+				table.onclick = function(e) {
+					
+					e = e || window.event;
+					
+					var currObj = e.target || e.srcElement;
+					
+					if(currObj.nodeName == 'INPUT') {
+						
+						var flag = confirm('确定要删除此行数据吗');
+						
+						if (!flag) {
+							return;
+						}
+						
+						var delPar = currObj.parentNode.parentNode;
+						table.removeChild(delPar);
+						
+					}	
+				}
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>

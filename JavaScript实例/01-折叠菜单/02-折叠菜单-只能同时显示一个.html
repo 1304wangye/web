@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				font-size: 14px;
+				font-family: "微软雅黑";
+			}
+			ul,li {
+				list-style: none;
+			}
+			#menu {
+				width: 200px;
+				margin: 20px auto;
+				border: 1px solid #ccc;
+			}
+			#menu p {
+				background:#eee;
+				line-height: 26px;
+				padding-left: 10px;
+				font-weight: bold;
+				border-bottom: 1px solid #ccc;
+				cursor: pointer;
+			}
+			#menu ul {
+				display: none;
+			}
+			#menu ul li {
+				line-height: 24px;
+				padding-left: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="menu">
+			<div>
+				<p>Web前端</p>
+				<ul style="display: block;">
+					<li>html</li>
+					<li>css</li>
+					<li>javascript</li>
+					<li>jquery</li>
+					<li>h5</li>
+				</ul>
+			</div>
+			<div>
+				<p>后台开发</p>
+				<ul>
+					<li>Java</li>
+					<li>php</li>
+					<li>ruby</li>
+					<li>asp</li>
+					<li>nodejs</li>
+				</ul>
+			</div>
+			<div>
+				<p>数据库</p>
+				<ul>
+					<li>oracle</li>
+					<li>mysql</li>
+					<li>db2</li>
+					<li>redis</li>
+					<li>mongodb</li>
+				</ul>
+			</div>
+		</div>
+		<script>
+			window.onload = function() {
+				//获得容器对象
+				var menu = document.getElementById('menu');
+				//获得所有标题对象
+				var ps = document.getElementsByTagName('p');
+				//获得所有ul对象
+				var uls = document.getElementsByTagName('ul');
+				//遍历所有标题
+				for (var i = 0; i < ps.length; i ++) {
+					//设置p标签的自定义属性
+					ps[i].setAttribute('pid',i);
+					ps[i].onclick = function(e) {
+						//取出自定义属性值
+						var pid = this.getAttribute('pid');
+						//获得对应的ul对象
+						var currUL = uls[pid];
+						//动态显示隐藏对应的ul
+						if (currUL.style.display == 'block'){
+							currUL.style.display = 'none';
+						}else{
+							//关闭所有ul
+							for (var i = 0 ;i < uls.length; i++) {
+								uls[i].style.display = 'none';
+							}
+							currUL.style.display = 'block';
+						}	
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

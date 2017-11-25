@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//判断当前浏览器是移动端，pad，PC端
+			var agent = navigator.userAgent.toLocaleLowerCase();//获得客户端的信息
+			if (agent.indexOf('iphone') != -1 || agent.indexOf('android') != -1) {
+				location.href = 'mobile/index.html';
+			} else {
+				location.href = 'pc/index.html';
+			}
+		</script>
+	</body>
+</html>
